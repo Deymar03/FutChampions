@@ -1,5 +1,7 @@
 import flet as ft
 from marcador import marcador_app  
+from marcador import marcador_app
+from crear_torneo import crear_torneo_app
 
 def main(page: ft.Page):
     page.title = "FutChampions"
@@ -7,14 +9,20 @@ def main(page: ft.Page):
     page.window_height = 600
 
     # menú principal
-    boton_crear = ft.ElevatedButton("Crear Torneo", width=250)
+    def abrir_crear_torneo(e):
+        page.clean()
+        crear_torneo_app(page)
+
+    boton_crear = ft.ElevatedButton("Crear Torneo", width=250, on_click=abrir_crear_torneo)
     boton_seguir = ft.ElevatedButton("Seguir Torneo", width=250)
 
     #abrir el marcador
     def abrir_marcador(e):
        
+
         page.clean()
         marcador_app(page)  
+        marcador_app(page)
 
     boton_marcador = ft.ElevatedButton("Marcador", width=250, on_click=abrir_marcador)
     boton_historial = ft.ElevatedButton("Historial", width=250)

@@ -62,5 +62,6 @@ def marcador_app(page: ft.Page):
     )
 
 # Ejecutar marcador
+# redireciona para ejecutar el marcador 
 if __name__ == "__main__":
     ft.app(target=marcador_app)
